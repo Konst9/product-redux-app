@@ -1,25 +1,18 @@
 import React from 'react';
-import logo from './assets/icons/logo.svg';
-import {SApp, SHeader, SLink, SLogo} from "./assets/styles/app.styles";
+import { Wrapper } from "./assets/styles/app.styles";
+// import ProductListData from "./data/Product/productListData";
+// import ProductCard from './components/product/card/product-card.component';
+import ProductListContainer from './components/product/list/product-list.container';
 
 function App() {
-    return (
-        <SApp>
-            <SHeader>
-                <SLogo src={logo} alt="logo"/>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <SLink
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </SLink>
-            </SHeader>
-        </SApp>
-    );
+  // const productListData = ProductListData();
+
+  return (
+    <Wrapper>
+      {/*<ProductCard {...productListData[0]}/>*/}
+      <ProductListContainer />
+    </Wrapper>
+  );
 }
 
 export default App;
