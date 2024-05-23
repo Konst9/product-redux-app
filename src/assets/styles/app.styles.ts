@@ -2,8 +2,8 @@ import styled, {keyframes} from 'styled-components'
 
 export const Wrapper = styled.div`
     display: flex;
-    flex-wrap: wrap;
-  padding: 24px;
+    flex-direction: column;
+
 `
 
 export const SHeader = styled.header`
