@@ -2,15 +2,15 @@ import styled from 'styled-components';
 
 export const Card = styled.div`
     height: 300px;
-    padding: 8px;
+    padding: 0 48px;
     display: flex;
-    gap: 24px;
-    border: 1px solid black;
+    gap: 16px;
 `
 
 export const CardImg = styled.img`
-    width: 124px;
-    height: 124px;
+    max-width: 124px;
+    height: auto;
+    object-fit: contain;
 `
 
 export const CardData = styled.div`
