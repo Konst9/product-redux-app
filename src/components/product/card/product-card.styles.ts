@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
-    height: 300px;
+    height: 250px;
     padding: 0 48px;
     display: flex;
     gap: 16px;
@@ -9,14 +9,14 @@ export const Card = styled.div`
 
 export const CardImg = styled.img`
     max-width: 124px;
-    height: auto;
+    max-height: 150px;
     object-fit: contain;
 `
 
 export const CardData = styled.div`
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 350px;
 `
 
 export const CardHeader = styled.h1`

@@ -3,7 +3,12 @@ import styled, {keyframes} from 'styled-components'
 export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
+`
 
+export const BtnFixed = styled.div`
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 `
 
 export const SHeader = styled.header`

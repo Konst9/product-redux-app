@@ -1,5 +1,6 @@
 import React, { memo, FC } from 'react';
 import { ProductModel } from '../../../data/Product/product.data';
+import Description from '../../../utils/description';
 import {
   Card,
   CardImg,
