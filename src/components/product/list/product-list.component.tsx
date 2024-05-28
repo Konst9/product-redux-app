@@ -5,10 +5,10 @@ import {
   CardImg,
   CardHeader,
   CardData,
-  CardDescription,
   CardPrice,
   CardContent
 } from "../card/product-card.styles";
+import Description from '../../../utils/description';
 
 interface ProductsListComponentProps {
   products: ProductModel[];
@@ -22,7 +22,7 @@ function ProductListComponent({ products }: ProductsListComponentProps) {
           <CardData>
             <CardHeader>{item.title}</CardHeader>
             <CardContent>
-              <CardDescription>{item.description}</CardDescription>
+              <Description text={item.description} />
               <CardPrice>Price: ${item.price}</CardPrice>
             </CardContent>
           </CardData>
