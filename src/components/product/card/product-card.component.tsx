@@ -3,6 +3,7 @@ import { ProductModel } from '../../../data/Product/product.data';
 import Description from '../../../utils/description';
 import {
   Card,
+  CardImgContainer,
   CardImg,
   CardHeader,
   CardData,
@@ -17,7 +18,9 @@ const ProductCard: FC<ProductProps> = ({ title, image, price, description}) => {
 
   return (
     <Card>
-      <CardImg src={image} alt={title} />
+      <CardImgContainer>
+        <CardImg src={image} alt={title} />
+      </CardImgContainer>
       <CardData>
         <CardHeader>{title}</CardHeader>
         <CardContent>

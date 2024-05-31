@@ -1,8 +1,9 @@
 import React from 'react';
-import { ProductModel} from '../../../data/Product/product.data';
+import { ProductModel } from '../../../data/Product/product.data';
 import {
   Card,
   CardImg,
+  CardImgContainer,
   CardHeader,
   CardData,
   CardPrice,
@@ -18,7 +19,9 @@ function ProductListComponent({ products }: ProductsListComponentProps) {
     <>
       {products.map((item) => (
         <Card key={item.id}>
-          <CardImg src={item.image} alt={item.title} />
+          <CardImgContainer>
+            <CardImg src={item.image} alt={item.title} />
+          </CardImgContainer>
           <CardData>
             <CardHeader>{item.title}</CardHeader>
             <CardContent>

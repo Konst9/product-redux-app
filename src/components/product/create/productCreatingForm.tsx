@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import Input from '../../../utils/input/input';
 import Button from '../../../utils/button/button';
 import { Wrapper, Error } from './productCreatingForm.styles';
+import { ProductModel } from '../../../data/Product/product.data';
 
-function ProductCreatingForm( {onSubmit}: any ) {
+interface ProductCreatingFormProps {
+  onSubmit: (product: Partial<ProductModel>) => void;
+}
+
+function ProductCreatingForm( {onSubmit}: ProductCreatingFormProps ) {
   const [titleValue, setTitleValue] = useState('title');
   const [descriptionValue, setDescriptionValue] = useState('description');
   const [validationTitle, setValidationTitle] = useState(false);
