@@ -43,11 +43,6 @@ export const CardContent = styled.div`
     flex: 1;
 `
 
-export const CardDescription = styled.p`
-    font-size: 10px;
-    margin: 0;
-`
-
 export const CardPrice = styled.p`
     font-size: 12px;
     font-weight: bold;

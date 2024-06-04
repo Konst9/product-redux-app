@@ -1,12 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ProductModel } from '../../data/Product/product.data';
 
-export interface CounterState {
+export interface ProductState {
   products: ProductModel[];
 }
 
-const initialState: CounterState = {
+const initialState: ProductState = {
   products: [],
 }
 
@@ -17,8 +16,11 @@ export const productSlice = createSlice({
     setProductsAction: (state, action: PayloadAction<ProductModel[]>) => {
       state.products = action.payload;
     },
+    addProductToStart: (state, action: PayloadAction<ProductModel>) => {
+      state.products = [action.payload, ...state.products];
+    },
   },
 })
 
-export const { setProductsAction } = productSlice.actions;
-export default productSlice.reducer
+export const { setProductsAction, addProductToStart } = productSlice.actions;
+export default productSlice.reducer;

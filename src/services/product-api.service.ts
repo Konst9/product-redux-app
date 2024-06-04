@@ -2,7 +2,7 @@ import axios from 'axios';
 import { PRODUCT_URL } from '../constants/api.constance';
 import { ProductModel } from '../data/Product/product.data';
 import { AppDispatch } from '../store/store';
-import { setProductsAction } from "../store/products/product.slice"
+import { addProductToStart, setProductsAction } from '../store/products/product.slice';
 
 export const fetchProductsApi = async (dispatch: AppDispatch) => {
   try {
@@ -15,13 +15,18 @@ export const fetchProductsApi = async (dispatch: AppDispatch) => {
   }
 }
 
-export const createProductApi = async (product: Partial<ProductModel>) => {
+export const createProductApi = async (product: Partial<ProductModel>, dispatch: AppDispatch): Promise<ProductModel> => {
   try {
     const response = await axios.post(PRODUCT_URL, product);
-    console.log(response.data);
-    return response.data;
-  } catch(error) {
-    console.log('Error to created new product: ', error);
+    if (response.status === 200) {
+      const createdProduct: ProductModel = response.data;
+      dispatch(addProductToStart(createdProduct));
+      return createdProduct;
+    } else {
+      throw new Error('Failed to create product');
+    }
+  } catch (error) {
+    console.error('Error to create new product: ', error);
     throw error;
   }
 };

@@ -26,7 +26,7 @@ function ProductListComponent({ products }: ProductsListComponentProps) {
             <CardHeader>{item.title}</CardHeader>
             <CardContent>
               <Description text={item.description} />
-              <CardPrice>Price: ${item.price}</CardPrice>
+              <CardPrice>Price:<br/> {item.price}$</CardPrice>
             </CardContent>
           </CardData>
         </Card>

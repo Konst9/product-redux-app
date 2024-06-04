@@ -11,6 +11,8 @@ interface ProductCreatingFormProps {
 function ProductCreatingForm( {onSubmit}: ProductCreatingFormProps ) {
   const [titleValue, setTitleValue] = useState('title');
   const [descriptionValue, setDescriptionValue] = useState('description');
+  const [priceValue, setPriceValue] = useState(0);
+  const [imageSrc, setImageSrc] = useState('https://i.pinimg.com/236x/93/ed/3a/93ed3af6411e1e8b997038c74c287a8a.jpg')
   const [validationTitle, setValidationTitle] = useState(false);
 
   const handleTitleChange = (e: any) => {
@@ -28,12 +30,23 @@ function ProductCreatingForm( {onSubmit}: ProductCreatingFormProps ) {
     const value = e.target.value;
     setDescriptionValue(value);
   }
+  const handleImageChange = (e: any) => {
+    const value = e.target.value;
+    setImageSrc(value);
+  }
+
+  const handlePriceChange = (e: any) => {
+    const value = e.target.value;
+    setPriceValue(value);
+  }
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
     onSubmit({
       title: titleValue,
       description: descriptionValue,
+      image: imageSrc,
+      price: priceValue
     })
   }
 
@@ -48,6 +61,14 @@ function ProductCreatingForm( {onSubmit}: ProductCreatingFormProps ) {
         <Input
           value={descriptionValue}
           onChange={handleDescriptionChange}
+        />
+        <Input
+          value={imageSrc}
+          onChange={handleImageChange}
+        />
+        <Input
+          value={priceValue}
+          onChange={handlePriceChange}
         />
         <Button type="submit" title="Create"></Button>
       </Wrapper>
