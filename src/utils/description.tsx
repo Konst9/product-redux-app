@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from '@mui/material/Button';
+import { CardDescription, CardDescriptionBtn } from './description.styles';
 
 const MAXLENGTH: number = 150;
 
@@ -21,11 +21,11 @@ const Description: React.FC<DescriptionProps> = ({text, maxLength = MAXLENGTH}) 
 
   return (
     <div>
-      <span>{displayText}</span>
+      <CardDescription>{displayText}</CardDescription>
       {text.length > maxLength && (
-        <button onClick={handleToggle}>
-          {isTextSliced ? 'Show details' : 'Hide details'}
-        </button>
+        <CardDescriptionBtn onClick={handleToggle}>
+          {isTextSliced ? 'Show details...' : 'Hide details...'}
+        </CardDescriptionBtn>
       )}
     </div>
   );

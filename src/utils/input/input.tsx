@@ -2,7 +2,7 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import { MyInput } from './input.style';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  value?: string;
+  value?: string | number;
   defaultValue?: string;
   innerClassName?: string;
 }
